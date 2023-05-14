@@ -29,6 +29,7 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
   METHOD zif_abapgit_object~deserialize.
 
+    ASSERT ms_item-obj_name = '39b1b613-f083-49fb-869b-f6125bbb5129'.
     BREAK-POINT.
 * todo
 
@@ -36,7 +37,7 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
 
   METHOD zif_abapgit_object~exists.
-    rv_bool = abap_false.
+    rv_bool = abap_true.
   ENDMETHOD.
 
 
