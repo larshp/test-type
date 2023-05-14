@@ -29,14 +29,14 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
   METHOD zif_abapgit_object~deserialize.
 
-break-point.
+    BREAK-POINT.
 * todo
 
   ENDMETHOD.
 
 
   METHOD zif_abapgit_object~exists.
-    rv_bool = abap_true.
+    rv_bool = abap_false.
   ENDMETHOD.
 
 
@@ -76,8 +76,11 @@ break-point.
 
 
   METHOD zif_abapgit_object~map_filename_to_object.
-    break-point.
-    RETURN.
+
+    ASSERT iv_filename = 'pretty_name.hvam.xml'.
+
+    cs_item-obj_name = '39b1b613-f083-49fb-869b-f6125bbb5129'.
+
   ENDMETHOD.
 
 
