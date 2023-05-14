@@ -55,7 +55,7 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
 
   METHOD zif_abapgit_object~get_metadata.
-    RETURN.
+    rs_metadata = get_metadata( ).
   ENDMETHOD.
 
 
@@ -65,7 +65,7 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
 
   METHOD zif_abapgit_object~is_locked.
-    RETURN.
+    rv_is_locked = abap_false.
   ENDMETHOD.
 
 
@@ -80,21 +80,17 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
 
   METHOD zif_abapgit_object~map_object_to_filename.
-    RETURN.
+    cv_filename = 'pretty_name.xml'.
   ENDMETHOD.
 
 
   METHOD zif_abapgit_object~serialize.
 
-    DATA ls_file TYPE zif_abapgit_git_definitions=>ty_file.
+    ASSERT ms_item-obj_name = '39b1b613-f083-49fb-869b-f6125bbb5129'.
 
-    ls_file-filename = zcl_abapgit_filename_logic=>object_to_file(
-      is_item  = ms_item
-      iv_ext   = 'json' ).
-
-    ls_file-data = '{"ssdff": 2}'.
-
-    zif_abapgit_object~mo_files->add( ls_file ).
+    io_xml->add(
+      iv_name = 'foo'
+      ig_data = 'bar' ).
 
   ENDMETHOD.
 ENDCLASS.

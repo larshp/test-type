@@ -67,8 +67,12 @@ CLASS ZCL_ABAPGIT_USER_EXIT IMPLEMENTATION.
     CHECK iv_package = '$TEST-TYPE'.
 
     APPEND VALUE #(
-      object   = 'HVAM'
-      obj_name = '39b1b613-f083-49fb-869b-f6125bbb5129' ) TO ct_tadir.
+      pgmid     = 'R3TR'
+      object    = 'HVAM'
+      devclass  = iv_package
+      path      = '/src/'
+      obj_name  = '39b1b613-f083-49fb-869b-f6125bbb5129'
+      srcsystem = sy-sysid ) TO ct_tadir.
 
   ENDMETHOD.
 
