@@ -29,6 +29,7 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
   METHOD zif_abapgit_object~deserialize.
 
+break-point.
 * todo
 
   ENDMETHOD.
@@ -75,12 +76,13 @@ CLASS ZCL_ABAPGIT_OBJECT_HVAM IMPLEMENTATION.
 
 
   METHOD zif_abapgit_object~map_filename_to_object.
+    break-point.
     RETURN.
   ENDMETHOD.
 
 
   METHOD zif_abapgit_object~map_object_to_filename.
-    cv_filename = 'pretty_name.xml'.
+    cv_filename = 'pretty_name.hvam.xml'.
   ENDMETHOD.
 
 
